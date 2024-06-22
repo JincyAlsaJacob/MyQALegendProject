@@ -15,7 +15,7 @@ public class ExcelUtility {
 	{
 		try
 		{
-			f=new FileInputStream("");
+			f=new FileInputStream("C:\\Users\\Jincy\\git\\MyQALegendProject\\QALegend\\src\\main\\resources\\TestData.xlsx");
 			w=new XSSFWorkbook(f);
 			sh=w.getSheet(sheet);
 			Row r=sh.getRow(a);
@@ -31,7 +31,7 @@ public class ExcelUtility {
 	{
 		try
 		{
-		f=new FileInputStream("");
+		f=new FileInputStream("C:\\\\Users\\\\Jincy\\\\git\\\\MyQALegendProject\\\\QALegend\\\\src\\\\main\\\\resources\\\\TestData.xlsx");
 		w=new XSSFWorkbook(f);
 		sh=w.getSheet(sheet);
 		Row r=sh.getRow(a);
