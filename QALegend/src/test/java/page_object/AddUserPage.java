@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class AddUserPage {
@@ -16,8 +17,7 @@ public class AddUserPage {
 		PageFactory.initElements(driver, this);
 	}
 	
-	@FindBy(xpath="//a[@class='btn btn-block btn-primary']")
-	WebElement add_user_field;
+	
 	@FindBy(id="first_name")
 	WebElement firstname_field;
 	@FindBy(id="last_name")
@@ -38,10 +38,7 @@ public class AddUserPage {
 	WebElement success_message;
 	
 	
-	public void clickOnAddUser()
-	{
-		add_user_field.click();
-	}
+	
 	public void enterFirstName(String firstname)
 	{
 		firstname_field.sendKeys(firstname);
@@ -56,8 +53,7 @@ public class AddUserPage {
 	}
 	public void selectFromDropDown()
 	{
-		Select select=new Select(role_dropdown);
-		select.selectByIndex(2);
+		PageUtility.selectFromDropDownByVisibleText(role_dropdown, "Technician");
 	}
 	public void enterUserName(String username_value)
 	{
@@ -71,9 +67,10 @@ public class AddUserPage {
 	{
 		confirm_userpassword.sendKeys(passworduser);
 	}
-	public void clickOnSaveButton()
+	public UsersPage clickOnSaveButton()
 	{
 		save_button.click();
+		return new UsersPage(driver);
 	}
 	public void waitForTextToBeInvisible()
 	{

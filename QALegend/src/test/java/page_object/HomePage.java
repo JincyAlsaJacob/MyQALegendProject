@@ -26,10 +26,7 @@ WebElement user_logout;
 WebElement signout_button;
 @FindBy(xpath="//a[text()='Profile']")
 WebElement profile_button;
-@FindBy(id="last_name")
-WebElement edit_lastname;
-@FindBy(xpath="//button[text()='Update']")
-WebElement update_button;
+
 
 public String getLoginText()
 {
@@ -49,10 +46,10 @@ public void clickOnUserManagement()
 {
 	user_management.click();
 }
-public AddUserPage clickOnUsersOption()
+public UsersPage clickOnUsersOption()
 {
 	users_option.click();
-	return new AddUserPage(driver);
+	return new UsersPage(driver);
 }
 public void clickOnUserLogOut()
 {
@@ -62,21 +59,10 @@ public void clickOnSignOutButton()
 {
 	signout_button.click();
 }
-public void clickOnProfileButton()
+public My_ProfilePage clickOnProfileButton()
 {
 	profile_button.click();
-}
-public void clearLastName()
-{
-	edit_lastname.clear();
-}
-public void enterNewLastName(String new_lastname)
-{
-	edit_lastname.sendKeys(new_lastname);
-}
-public void clickOnUpdateButton()
-{
-	update_button.click();
+	return new My_ProfilePage(driver);
 }
 public String getUserProfileText()
 {

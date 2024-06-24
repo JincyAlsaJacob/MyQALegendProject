@@ -12,6 +12,7 @@ import constants.Messages;
 import page_object.AddUserPage;
 import page_object.HomePage;
 import page_object.LoginPage;
+import page_object.UsersPage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
@@ -34,8 +35,8 @@ public class AddUserPageTest extends Base{
 	    HomePage home=login.clickOnLoginButton();
 	    home.clickOnEndTourButton();
 	    home.clickOnUserManagement();
-	    AddUserPage add_user=home.clickOnUsersOption();
-	    add_user.clickOnAddUser();
+	    UsersPage users= home.clickOnUsersOption();
+	    AddUserPage add_user=users.clickOnAddUser();
 	    add_user.enterFirstName(firstname);
 	    add_user.enterLastName(lastname);
 	    add_user.enterEmail(email);
@@ -43,7 +44,11 @@ public class AddUserPageTest extends Base{
 	    add_user.enterUserName(username_value);
 	    add_user.enterPassword(passworduser);
 	    add_user.enterConfirmPassword(passworduser);
-	    add_user.clickOnSaveButton();            //Assertion
+	    add_user.clickOnSaveButton();            
+	    users.searchUserOnSearchField(username_value);
+	    String actual_usertext=users.getSearchUser();
+	    String expected_usertext=username_value;
+	    Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGINFAILED);
 	    
 	}
 	    
@@ -66,8 +71,8 @@ public class AddUserPageTest extends Base{
 	    HomePage home=login.clickOnLoginButton();
 	    home.clickOnEndTourButton();
 	    home.clickOnUserManagement();
-	    AddUserPage add_user=home.clickOnUsersOption();
-	    add_user.clickOnAddUser();
+	    UsersPage users= home.clickOnUsersOption();
+	    AddUserPage add_user=users.clickOnAddUser();
 	    add_user.enterFirstName(firstname);
 	    add_user.enterLastName(lastname);
 	    add_user.enterEmail(email);

@@ -1,6 +1,9 @@
 package constants;
 
 public class Constants {
+	
+	public static final String TESTDATAEXCELPATH="\\src\\main\\resources\\TestData.xlsx";
+	public static final String HOMEDIRECTORY=System.getProperty("user.dir");
 	public static final String PROFILE_NAME="XYZ ";
 	public static final String LOGINPAGE="LoginPage";
 	public static final String HOMEPAGE="HomePage";
