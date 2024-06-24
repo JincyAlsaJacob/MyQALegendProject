@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.ExcelUtility;
+
 public class UsersPage {
 	WebDriver driver;
 	public UsersPage(WebDriver driver)
@@ -33,6 +35,11 @@ public class UsersPage {
 	{
 		String user=search_row.getText();
 		return user;
+	}
+	public void searchOnSearchFieldUsingEmail(String email_on_search)
+	{
+		
+		search_field.sendKeys(email_on_search);
 	}
 
 }

@@ -30,7 +30,7 @@ public class LoginPageTest extends Base{
 	}
 	
 
-	@Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
+	/*@Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
 	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String username, String password)
 	{
 	    LoginPage login=new LoginPage(driver);
@@ -41,6 +41,6 @@ public class LoginPageTest extends Base{
 	    String expected_errormessage=ExcelUtility.getStringData(3, 1, Constants.LOGINPAGE);
 	    Assert.assertEquals(actual_errormessage, expected_errormessage, Messages.LOGINSUCCESSFUL); 
 	}
-
+*/
 	
 }

@@ -13,6 +13,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Parameters;
 
 public class Base {
 	public WebDriver driver;
@@ -38,9 +39,10 @@ public class Base {
 		 driver.manage().window().maximize();
 	}
 	@BeforeMethod
-	public void setUp()
+	@Parameters("browser")
+	public void setUp(String browser_name)
 	{
-		initialiseBrowser("Chrome");
+		initialiseBrowser(browser_name);
 	}
 	@AfterMethod
 	public void closeBrowser(ITestResult result) throws IOException

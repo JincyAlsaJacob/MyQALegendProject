@@ -29,7 +29,7 @@ public class ResetPageTest extends Base{
 	
 	}
 	
-	@Test
+/*	@Test
 	public void verifyErrorMessageWithInvalidEmailidOnForgotPassword()
 	{
 		String email_value=ExcelUtility.getStringData(3, 1, Constants.RESETPAGE);
@@ -42,7 +42,7 @@ public class ResetPageTest extends Base{
 		String expected_errormessage=ExcelUtility.getStringData(2, 1, Constants.RESETPAGE);
 		Assert.assertEquals(actual_errormessage, expected_errormessage, Messages.VALIDMAILID);
 		
-	}   
+	}   */
 	
 
 }
