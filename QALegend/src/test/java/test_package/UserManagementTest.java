@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import automation_core.Base;
 import constants.Constants;
+import constants.Messages;
 import page_object.HomePage;
 import page_object.LoginPage;
 import page_object.UserManagementPage;
@@ -16,34 +17,34 @@ public class UserManagementTest extends Base{
 	public void verifyUserManagementOptionsUsers()
 	{
 
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
-	    
-	    LoginPage login=new LoginPage(driver);
-	    login.enterUsername(login_username);
-	    login.enterPassword(login_password);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+		
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
 	    HomePage home=login.clickOnLoginButton();
 	    home.clickOnEndTourButton();
 	    UserManagementPage management=home.clickOnUserManagement();
-	    boolean users_displayed=management.isUsersOptionDisplayed();
-	    Assert.assertTrue(users_displayed, Constants.USEROPTIONNOTDISPLAYED);
+	    boolean users_displayed=management.isUsersOptionEnabled();
+	    Assert.assertTrue(users_displayed, Messages.USER_OPTION_NOT_ENABLED);
 	    
 	}
 	@Test
 	public void verifyUserManagementOptionsRoles()
 	{
 
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 	    
-	    LoginPage login=new LoginPage(driver);
-	    login.enterUsername(login_username);
-	    login.enterPassword(login_password);
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
 	    HomePage home=login.clickOnLoginButton();
 	    home.clickOnEndTourButton();
 	    UserManagementPage management=home.clickOnUserManagement();
-	    boolean roles_displayed=management.isRolesOptionDisplayed();
-	    Assert.assertTrue(roles_displayed, Constants.ROLESOPTIONNOTDISPLAYED);
+	    boolean roles_displayed=management.isRolesOptionEnabled();
+	    Assert.assertTrue(roles_displayed, Messages.ROLES_OPTION_NOT_ENABLED);
 	    
 	}
 

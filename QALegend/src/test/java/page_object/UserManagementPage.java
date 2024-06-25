@@ -24,17 +24,17 @@ public class UserManagementPage {
 	@FindBy(xpath="//i[@class='fa fa-handshake-o']//following-sibling::span")
 	WebElement salescommisionagent_option;
 	
-	public boolean isUsersOptionDisplayed()
+	public boolean isUsersOptionEnabled()
 	{
-		return WebElementUtility.isElementDisplayed(users_option);
+		return WebElementUtility.isElementEnabled(users_option);
 	}
-	public boolean isRolesOptionDisplayed()
+	public boolean isRolesOptionEnabled()
 	{
-		return WebElementUtility.isElementDisplayed(roles_option);
+		return WebElementUtility.isElementEnabled(roles_option);
 	}
-	public boolean isSalesCommissionAgentOptionDisplayed()
+	public boolean isSalesCommissionAgentOptionEnabled()
 	{
-		return WebElementUtility.isElementDisplayed(salescommisionagent_option);
+		return WebElementUtility.isElementEnabled(salescommisionagent_option);
 	}
 
 }

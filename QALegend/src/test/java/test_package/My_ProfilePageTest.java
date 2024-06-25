@@ -18,8 +18,8 @@ public class My_ProfilePageTest extends Base{
 	public void verifyEditProfile()
 	{
     	
-    	String username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 		String new_lastname=RandomDataUtility.getLastname();
 
 		LoginPage login=new LoginPage(driver);
@@ -34,7 +34,7 @@ public class My_ProfilePageTest extends Base{
 		profile.clickOnUpdateButton();
 		String actual_editname=home.getUserProfileText();
 		String expected_editname=Constants.PROFILE_NAME+new_lastname;
-		Assert.assertEquals(actual_editname, expected_editname, Messages.FAILEDPROFILEUPDATION);
+		Assert.assertEquals(actual_editname, expected_editname, Messages.FAILED_PROFILE_UPDATION);
 		
 	}
 

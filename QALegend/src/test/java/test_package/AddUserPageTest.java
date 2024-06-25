@@ -20,8 +20,8 @@ public class AddUserPageTest extends Base{
 	@Test
 	public void verifyAddUser()
 	{   
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 	    
 		String firstname=RandomDataUtility.getFirstname();
 	    String lastname=RandomDataUtility.getLastname();
@@ -48,7 +48,7 @@ public class AddUserPageTest extends Base{
 	    users.searchUserOnSearchField(username_value);
 	    String actual_usertext=users.getSearchUser();
 	    String expected_usertext=username_value;
-	    Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGINFAILED);
+	    Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGIN_FAILED);
 	    
 	}
 	    
@@ -56,8 +56,8 @@ public class AddUserPageTest extends Base{
 	@Test
 	public void verifyUserLoginWithNewlyAddedUser()
 	{
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 	    
 		String firstname=RandomDataUtility.getFirstname();
 	    String lastname=RandomDataUtility.getLastname();
@@ -88,8 +88,8 @@ public class AddUserPageTest extends Base{
 	    login.enterPassword(passworduser);
 	    login.clickOnLoginButton();
 	    String actual_message=home.getLoginText();
-	    String expected_message=Constants.PROFILEWELCOME+firstname+Constants.CHARACTER;
-	    Assert.assertEquals(actual_message, expected_message, Messages.LOGINFAILED);
+	    String expected_message=Constants.PROFILE_WELCOME+firstname+Constants.CHARACTER;
+	    Assert.assertEquals(actual_message, expected_message, Messages.LOGIN_FAILED);
 		
 	}
 

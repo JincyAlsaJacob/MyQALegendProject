@@ -14,13 +14,13 @@ public class UsersPageTest extends Base{
 	@Test
 	public void verifySearchUser()
 	{
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
-	    String email_on_search=ExcelUtility.getStringData(0, 1, Constants.USERSPAGE);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+	    String email_on_search=ExcelUtility.getStringData(0, 1, Constants.USERS_PAGE);
 	    
-		LoginPage login=new LoginPage(driver);
-	    login.enterUsername(login_username);
-	    login.enterPassword(login_password);
+	    LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
 	    HomePage home=login.clickOnLoginButton();
 	    home.clickOnEndTourButton();
 	    home.clickOnUserManagement();

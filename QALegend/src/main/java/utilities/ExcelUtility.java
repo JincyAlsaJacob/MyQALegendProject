@@ -8,6 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import constants.Constants;
+import constants.Messages;
 
 public class ExcelUtility {
 	static FileInputStream f;
@@ -17,7 +18,7 @@ public class ExcelUtility {
 	{
 		try
 		{
-			String path=Constants.HOMEDIRECTORY+Constants.TESTDATAEXCELPATH;
+			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;
 			f=new FileInputStream(path);
 			w=new XSSFWorkbook(f);
 			sh=w.getSheet(sheet);
@@ -27,7 +28,7 @@ public class ExcelUtility {
 		}
 		catch(Exception e)
 		{
-			throw new RuntimeException("Excelsheet not found");
+			throw new RuntimeException(Messages.EXCELSHEET_NOT_FOUND);
 		}
 	}
 	public static String getIntegerData(int a, int b, String sheet)
@@ -35,7 +36,7 @@ public class ExcelUtility {
 		try
 		{
 			
-		 String path=Constants.HOMEDIRECTORY+Constants.TESTDATAEXCELPATH;
+			String path=Constants.HOME_DIRECTORY+Constants.TESTDATA_EXCELPATH;
 		 f=new FileInputStream(path);
 		 w=new XSSFWorkbook(f);
 		 sh=w.getSheet(sheet);
@@ -47,7 +48,7 @@ public class ExcelUtility {
 		}
 		catch(Exception e)
 		{
-			throw new RuntimeException("Excelsheet not found");
+			throw new RuntimeException(Messages.EXCELSHEET_NOT_FOUND);
 		}
 	}
 

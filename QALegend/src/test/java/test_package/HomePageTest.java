@@ -23,23 +23,33 @@ public class HomePageTest extends Base{
 	@Test
 	public void verifyHomePageTitle()
 	{
-		String username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 		
 		LoginPage login=new LoginPage(driver);
 		login.enterUsername(username);
 		login.enterPassword(password);
 		HomePage home=login.clickOnLoginButton();
 		String actual_title=home.getHomePageTitle();
-		String expected_title=ExcelUtility.getStringData(0, 1, Constants.HOMEPAGE);
-		Assert.assertEquals(actual_title, expected_title, Messages.TITLEINVALID);
+		String expected_title=ExcelUtility.getStringData(0, 1, Constants.HOME_PAGE);
+		Assert.assertEquals(actual_title, expected_title, Messages.TITLE_INVALID);
 	}
 
-	
-	/*public void verifyUserLoginDate()
+	@Test
+	public void verifyUserLoginDate()
 	{
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 		
-	}*/
+		LoginPage login=new LoginPage(driver);
+		login.enterUsername(username);
+		login.enterPassword(password);
+		HomePage home=login.clickOnLoginButton();
+		String actual_logindate=home.getLoginDate();
+		String expected_logindate=home.getCurrentDate();
+		Assert.assertEquals(actual_logindate, expected_logindate, Messages.LOGIN_DATE_MISMATCH);
+		
+	}
 	
     
 

@@ -17,20 +17,20 @@ public class LoginPageTest extends Base{
 	@Test
 	public void verifyUserLoginWithValidCredentials()
 	{
-		String username=ExcelUtility.getStringData(0, 1, Constants.LOGINPAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGINPAGE);
+		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 		
 		LoginPage login=new LoginPage(driver);
 		login.enterUsername(username);
 		login.enterPassword(password);
 		HomePage home=login.clickOnLoginButton();
 		String actual_loginmessage=home.getLoginText();           
-		String expected_loginmessage=ExcelUtility.getStringData(2, 1, Constants.LOGINPAGE);
-		Assert.assertEquals(actual_loginmessage, expected_loginmessage, Messages.LOGINFAILED);
+		String expected_loginmessage=ExcelUtility.getStringData(2, 1, Constants.LOGIN_PAGE);
+		Assert.assertEquals(actual_loginmessage, expected_loginmessage, Messages.LOGIN_FAILED);
 	}
 	
 
-	/*@Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
+	@Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
 	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String username, String password)
 	{
 	    LoginPage login=new LoginPage(driver);
@@ -38,9 +38,9 @@ public class LoginPageTest extends Base{
 	    login.enterPassword(password);
 	    login.clickOnLoginButton();
 	    String actual_errormessage=login.getErrorMessage();
-	    String expected_errormessage=ExcelUtility.getStringData(3, 1, Constants.LOGINPAGE);
-	    Assert.assertEquals(actual_errormessage, expected_errormessage, Messages.LOGINSUCCESSFUL); 
+	    String expected_errormessage=ExcelUtility.getStringData(3, 1, Constants.LOGIN_PAGE);
+	    Assert.assertEquals(actual_errormessage, expected_errormessage, Messages.LOGIN_SUCCESSFUL); 
 	}
-*/
+
 	
 }
