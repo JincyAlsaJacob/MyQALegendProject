@@ -14,6 +14,8 @@ public class Constants {
 	public static final String AT="@";
 	public static final String PROFILEWELCOME="Welcome ";
 	public static final String CHARACTER=",";
+	public static final String USEROPTIONNOTDISPLAYED="Users Option Is Not Displayed";
+	public static final String ROLESOPTIONNOTDISPLAYED="Roles Option Is Not Displayed";
 
 
 }

@@ -26,8 +26,6 @@ public class UsersPageTest extends Base{
 	    home.clickOnUserManagement();
 	    UsersPage users= home.clickOnUsersOption();
 	    users.searchOnSearchFieldUsingEmail(email_on_search);
-	   
-	   
 	    //String actual_mailid=
 	   
 	

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+  <test name="Functional Test">
+    <classes>
+      <class name="test_package.LoginPageTest"/>
+      <class name="test_package.ResetPageTest"/>
+      <class name="test_package.HomePageTest"/>
+      <class name="test_package.My_ProfilePageTest"/>
+      <class name="test_package.AddUserPageTest"/>
+    </classes>
+  </test> <!-- Functional Test -->
+</suite> <!-- Functional Suite -->

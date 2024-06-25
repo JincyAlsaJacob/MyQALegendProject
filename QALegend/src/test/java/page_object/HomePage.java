@@ -18,7 +18,7 @@ WebElement login_message;
 WebElement end_tour;
 @FindBy(xpath="//span[text()='User Management']")
 WebElement user_management;
-@FindBy(xpath="//span[@class='title' and contains(text(),'Users')]")
+@FindBy(xpath="//i[@class='fa fa-user']//following-sibling::span")
 WebElement users_option;
 @FindBy(xpath="//a[@class='dropdown-toggle']")
 WebElement user_logout;
@@ -42,9 +42,10 @@ public void clickOnEndTourButton()
 {
 	end_tour.click();
 }
-public void clickOnUserManagement()
+public UserManagementPage clickOnUserManagement()
 {
 	user_management.click();
+	return new UserManagementPage(driver);
 }
 public UsersPage clickOnUsersOption()
 {
