@@ -1,7 +1,7 @@
 package constants;
 
 public class Messages {
-	public static final String LOGIN_FAILED="INVALID USER";
+	public static final String USER_LOGIN_FAILED="INVALID USER";
 	public static final String LOGIN_SUCCESSFUL="SUCCESSFUL LOGIN";
 	public static final String TITLE_INVALID="INVALID TITLE";
 	public static final String FAILED_PROFILE_UPDATION="PROFILE UPDATION FAILED";
@@ -11,5 +11,8 @@ public class Messages {
 	public static final String ROLES_OPTION_NOT_ENABLED="Roles Option Is Not Enabled";
 	public static final String LOGIN_DATE_MISMATCH="LOGIN DATE MISMATCH";
 	public static final String EXCELSHEET_NOT_FOUND="Excelsheet not found";
+	public static final String USER_SUCCESS_MESSAGE="User added successfully";
+	public static final String USER_SUCCESS_ERRORMSG="User not added successfully";
+	public static final String LOGIN_FAILED="INVALID USER";
 
 }

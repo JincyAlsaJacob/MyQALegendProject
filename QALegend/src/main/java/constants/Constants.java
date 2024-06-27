@@ -1,5 +1,7 @@
 package constants;
 
+import java.io.File;
+
 public class Constants {
 	
 	public static final String TESTDATA_EXCELPATH="\\src\\main\\resources\\TestData.xlsx";
@@ -14,6 +16,8 @@ public class Constants {
 	public static final String AT="@";
 	public static final String PROFILE_WELCOME="Welcome ";
 	public static final String CHARACTER=",";
+	public static final String CONFIG_FILE=System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources"+File.separator+"config.property";
+	
 	
 	
 

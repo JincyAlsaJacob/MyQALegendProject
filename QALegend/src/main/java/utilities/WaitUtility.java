@@ -33,7 +33,7 @@ public class WaitUtility {
 		FluentWait<WebDriver> wait=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(PAGELOAD_WAIT)).pollingEvery(Duration.ofSeconds(PAGELOAD_WAIT)).ignoring(NoSuchElementException.class);
 	    wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
-	public static void waitForElementToBeClickable(WebDriver driver, WebElement element)
+	public static void waitForElementToBeClickableUsingExplicitWait(WebDriver driver, WebElement element)
 	{
 		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(EXPLICIT_WAIT));
 		wait.until(ExpectedConditions.elementToBeClickable(element));

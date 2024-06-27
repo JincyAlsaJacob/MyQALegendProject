@@ -34,8 +34,7 @@ public class AddUserPage {
 	WebElement confirm_userpassword;
 	@FindBy(id="submit_user_button")
 	WebElement save_button;
-	@FindBy(className="toast-success")
-	WebElement success_message;
+	
 	
 	
 	
@@ -72,9 +71,6 @@ public class AddUserPage {
 		save_button.click();
 		return new UsersPage(driver);
 	}
-	public void waitForTextToBeInvisible()
-	{
-		WaitUtility.waitForElementToBeInVisible(driver, success_message);
-	}
+	
 
 }

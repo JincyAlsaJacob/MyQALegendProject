@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import utilities.ExcelUtility;
+import utilities.WaitUtility;
 
 public class UsersPage {
 	WebDriver driver;
@@ -21,6 +22,8 @@ public class UsersPage {
 	WebElement search_field;
 	@FindBy(xpath="//td[@class='sorting_1']")
 	WebElement search_row;
+	@FindBy(className="toast-success")
+	WebElement success_message;
 	
 	public AddUserPage clickOnAddUser()
 	{
@@ -31,15 +34,17 @@ public class UsersPage {
 	{
 		search_field.sendKeys(username);
 	}
+	
+	public String waitForTextToBeInvisible()
+	{
+		String msg_text=success_message.getText();
+		WaitUtility.waitForElementToBeInVisible(driver, success_message);
+		return msg_text;
+	}
 	public String getSearchUser()
 	{
 		String user=search_row.getText();
 		return user;
-	}
-	public void searchOnSearchFieldUsingEmail(String email_on_search)
-	{
-		
-		search_field.sendKeys(email_on_search);
 	}
 
 }

@@ -14,7 +14,7 @@ import page_object.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginPageTest extends Base{
-	@Test
+	@Test(groups="Regression")
 	public void verifyUserLoginWithValidCredentials()
 	{
 		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
@@ -26,11 +26,11 @@ public class LoginPageTest extends Base{
 		HomePage home=login.clickOnLoginButton();
 		String actual_loginmessage=home.getLoginText();           
 		String expected_loginmessage=ExcelUtility.getStringData(2, 1, Constants.LOGIN_PAGE);
-		Assert.assertEquals(actual_loginmessage, expected_loginmessage, Messages.LOGIN_FAILED);
+		Assert.assertEquals(actual_loginmessage, expected_loginmessage, Messages.USER_LOGIN_FAILED);
 	}
 	
 
-	@Test(dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
+	@Test(groups="Sanity", dataProvider="InvalidUserCredentials",dataProviderClass=DataProviders.class)
 	public void verifyErrorMessageWhileLoginWithInvalidCredentials(String username, String password)
 	{
 	    LoginPage login=new LoginPage(driver);
