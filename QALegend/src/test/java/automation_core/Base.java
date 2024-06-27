@@ -38,17 +38,12 @@ public class Base {
 		 driver.get("https://qalegend.com/billing/public/login");
 		 driver.manage().window().maximize();
 	}
-/*	@BeforeMethod
+    @BeforeMethod
 	@Parameters("browser")
 	public void setUp(String browser_name)
 	{
 		initialiseBrowser(browser_name);
-	} */
-	@BeforeMethod
-	public void setUp() 
-	{
-		initialiseBrowser("Chrome");
-	}
+	} 
 	@AfterMethod
 	public void closeBrowser(ITestResult result) throws IOException
 	{

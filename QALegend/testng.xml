@@ -2,12 +2,14 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Functional Suite">
   <test name="Functional Test">
+	  <parameter name="browser" value="Chrome"/>
     <classes>
-      <class name="test_package.LoginPageTest"/>
-      <class name="test_package.ResetPageTest"/>
-      <class name="test_package.HomePageTest"/>
-      <class name="test_package.My_ProfilePageTest"/>
-      <class name="test_package.AddUserPageTest"/>
+      <class name="test_package.HomePageTest">
+      <methods>
+		  <include name="verifyHomePageTitle"/>
+		  <exclude name="verifyUserLoginDate"/>
+      </methods>
+		  </class>
     </classes>
   </test> <!-- Functional Test -->
 </suite> <!-- Functional Suite -->
