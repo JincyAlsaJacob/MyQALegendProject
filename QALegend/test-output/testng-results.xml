@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-27T19:11:52 IST" name="Functional Suite" finished-at="2024-06-27T19:12:25 IST" duration-ms="33109">
+  <suite started-at="2024-06-28T21:39:58 IST" name="Functional Suite" finished-at="2024-06-28T21:42:53 IST" duration-ms="174663">
     <groups>
     </groups>
-    <test started-at="2024-06-27T19:11:52 IST" name="Test" finished-at="2024-06-27T19:12:25 IST" duration-ms="33109">
-      <class name="test_package.UsersPageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test_package.UsersPageTest@4135c3b]" started-at="2024-06-27T19:11:52 IST" name="setUp" finished-at="2024-06-27T19:12:13 IST" duration-ms="21201" status="PASS">
+    <test started-at="2024-06-28T21:39:58 IST" name="Test" finished-at="2024-06-28T21:42:53 IST" duration-ms="174663">
+      <class name="test_package.AddUserPageTest">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-28T21:39:58 IST" name="setUp" finished-at="2024-06-28T21:40:50 IST" duration-ms="52249" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,29 +18,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifySearchUser()[pri:0, instance:test_package.UsersPageTest@4135c3b]" started-at="2024-06-27T19:12:13 IST" name="verifySearchUser" finished-at="2024-06-27T19:12:24 IST" duration-ms="11361" status="FAIL">
+        <test-method signature="verifyAddUser()[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-28T21:40:50 IST" name="verifyAddUser" finished-at="2024-06-28T21:42:51 IST" duration-ms="121042" status="FAIL">
           <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//td[@class='sorting_1']"}
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@class='form-control input-sm']"}
   (Session info: chrome=125.0.6422.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0632ac56f6395f0937eed6652b60acaf, findElement {using=xpath, value=//td[@class='sorting_1']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.176, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Jincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52447}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52447/devtoo..., se:cdpVersion: 125.0.6422.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0632ac56f6395f0937eed6652b60acaf]]>
+Command: [af3e9b5b977a2f09635c912cef432189, findElement {using=xpath, value=//input[@class='form-control input-sm']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.176, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Jincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64550}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64550/devtoo..., se:cdpVersion: 125.0.6422.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af3e9b5b977a2f09635c912cef432189]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[@class='sorting_1']"}
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@class='form-control input-sm']"}
   (Session info: chrome=125.0.6422.176)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.18.1', revision: 'b1d3319b48'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [0632ac56f6395f0937eed6652b60acaf, findElement {using=xpath, value=//td[@class='sorting_1']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.176, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Jincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52447}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:52447/devtoo..., se:cdpVersion: 125.0.6422.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 0632ac56f6395f0937eed6652b60acaf
+Command: [af3e9b5b977a2f09635c912cef432189, findElement {using=xpath, value=//input[@class='form-control input-sm']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 125.0.6422.176, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Jincy\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64550}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64550/devtoo..., se:cdpVersion: 125.0.6422.176, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: af3e9b5b977a2f09635c912cef432189
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -59,9 +59,9 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy13.getText(Unknown Source)
-at page_object.UsersPage.getSearchUser(UsersPage.java:46)
-at test_package.UsersPageTest.verifySearchUser(UsersPageTest.java:31)
+at jdk.proxy2/jdk.proxy2.$Proxy13.sendKeys(Unknown Source)
+at page_object.UsersPage.searchUserOnSearchFieldUsingEmail(UsersPage.java:40)
+at test_package.AddUserPageTest.verifyAddUser(AddUserPageTest.java:49)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,19 +95,19 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifySearchUser -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test_package.UsersPageTest@4135c3b]" started-at="2024-06-27T19:12:24 IST" name="closeBrowser" finished-at="2024-06-27T19:12:25 IST" duration-ms="437" status="PASS">
+        </test-method> <!-- verifyAddUser -->
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-28T21:42:51 IST" name="closeBrowser" finished-at="2024-06-28T21:42:52 IST" duration-ms="1047" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifySearchUser status=FAILURE method=UsersPageTest.verifySearchUser()[pri:0, instance:test_package.UsersPageTest@4135c3b] output={null}]]]>
+                <![CDATA[[TestResult name=verifyAddUser status=FAILURE method=AddUserPageTest.verifyAddUser()[pri:0, instance:test_package.AddUserPageTest@6302bbb1] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- test_package.UsersPageTest -->
+      </class> <!-- test_package.AddUserPageTest -->
     </test> <!-- Test -->
   </suite> <!-- Functional Suite -->
 </testng-results>

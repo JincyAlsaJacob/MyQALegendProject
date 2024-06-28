@@ -34,11 +34,6 @@ public class UsersPage {
 	{
 		search_field.sendKeys(username);
 	}
-	public void searchUserOnSearchFieldUsingEmail(String email)
-	{
-		WaitUtility.waitForElementToBeInVisible(driver, success_message);
-	    search_field.sendKeys(email);
-	}
 	
 	public String waitForTextToBeInvisible()
 	{
@@ -48,10 +43,8 @@ public class UsersPage {
 	}
 	public String getSearchUser()
 	{
-		
-		WaitUtility.waitForElementToBeVisible(driver, search_row);
-		String user_mail=search_row.getText();
-		return user_mail;
+		String user=search_row.getText();
+		return user;
 	}
 
 }

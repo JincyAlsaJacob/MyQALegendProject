@@ -22,6 +22,7 @@ public class AddUserPageTest extends Base{
 	{   
 		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
 	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+	    String search_email=ExcelUtility.getStringData(1, 1, Constants.USERS_PAGE);
 	    
 		String firstname=RandomDataUtility.getFirstname();
 	    String lastname=RandomDataUtility.getLastname();
@@ -44,11 +45,16 @@ public class AddUserPageTest extends Base{
 	    add_user.enterUserName(username_value);
 	    add_user.enterPassword(passworduser);
 	    add_user.enterConfirmPassword(passworduser);
-	    add_user.clickOnSaveButton();            
-	    //users.searchUserOnSearchField(username_value);
-	    String actual_usertext=users.waitForTextToBeInvisible();
-	    String expected_usertext=Messages.USER_SUCCESS_MESSAGE;
-	    Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGIN_FAILED);
+	    add_user.clickOnSaveButton();  
+	    users.searchUserOnSearchFieldUsingEmail(search_email);
+	    String actual_mailid=users.getSearchUser();
+	    String expected_mailid=search_email;
+	    Assert.assertEquals(actual_mailid, expected_mailid, Messages.LOGIN_FAILED);
+	    //String expected_mailid=users.searchUserOnSearchFieldUsingEmail(search_email);
+	    
+	    //String actual_usertext=users.waitForTextToBeInvisible();
+	    //String expected_usertext=Messages.USER_SUCCESS_MESSAGE;
+	    //Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGIN_FAILED);
 	    
 	}
 	    
@@ -94,3 +100,6 @@ public class AddUserPageTest extends Base{
 	}
 
 }
+
+	
+

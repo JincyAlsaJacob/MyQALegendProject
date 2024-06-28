@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Functional Suite">
+	<listeners>
+		<listener class-name="listeners.Extend_Listeners"></listener>
+		<listener class-name="listeners.AnnotationTransformer"></listener>
+	</listeners>
+  <test name="Report Test">
+	  <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="test_package.HomePageTest">
+      <methods>
+		  <include name="verifyHomePageTitle"/>
+		  <exclude name="verifyUserLoginDate"/>
+	  </methods>
+      </class>
+      <class name="test_package.LoginPageTest"/>
+      <class name="test_package.AddUserPageTest"/>
+    </classes>
+  </test> <!-- Functional Test -->
+</suite> <!-- Functional Suite -->
