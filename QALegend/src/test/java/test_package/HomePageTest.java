@@ -19,38 +19,34 @@ import page_object.LoginPage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
-public class HomePageTest extends Base{
+public class HomePageTest extends Base {
 	@Test
-	public void verifyHomePageTitle()
-	{
-		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
-		
-		LoginPage login=new LoginPage(driver);
+	public void verifyHomePageTitle() {
+		String username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+
+		LoginPage login = new LoginPage(driver);
 		login.enterUsername(username);
 		login.enterPassword(password);
-		HomePage home=login.clickOnLoginButton();
-		String actual_title=home.getHomePageTitle();
-		String expected_title=ExcelUtility.getStringData(0, 1, Constants.HOME_PAGE);
+		HomePage home = login.clickOnLoginButton();
+		String actual_title = home.getHomePageTitle();
+		String expected_title = ExcelUtility.getStringData(0, 1, Constants.HOME_PAGE);
 		Assert.assertEquals(actual_title, expected_title, Messages.TITLE_INVALID);
 	}
 
 	@Test
-	public void verifyUserLoginDate()
-	{
-		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
-		
-		LoginPage login=new LoginPage(driver);
+	public void verifyUserLoginDate() {
+		String username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+
+		LoginPage login = new LoginPage(driver);
 		login.enterUsername(username);
 		login.enterPassword(password);
-		HomePage home=login.clickOnLoginButton();
-		String actual_logindate=home.getLoginDate();
-		String expected_logindate=home.getCurrentDate();
+		HomePage home = login.clickOnLoginButton();
+		String actual_logindate = home.getLoginDate();
+		String expected_logindate = home.getCurrentDate();
 		Assert.assertEquals(actual_logindate, expected_logindate, Messages.LOGIN_DATE_MISMATCH);
-		
+
 	}
-	
-    
 
 }

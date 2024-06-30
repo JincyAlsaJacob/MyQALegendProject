@@ -16,90 +16,79 @@ import page_object.UsersPage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
-public class AddUserPageTest extends Base{
+public class AddUserPageTest extends Base {
 	@Test
-	public void verifyAddUser()
-	{   
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
-	    String search_email=ExcelUtility.getStringData(1, 1, Constants.USERS_PAGE);
-	    
-		String firstname=RandomDataUtility.getFirstname();
-	    String lastname=RandomDataUtility.getLastname();
-	    String email=firstname+Constants.DOT+lastname+Constants.GMAIL;
-	    String passworduser=firstname+Constants.AT+lastname;
-	    String username_value=firstname+Constants.DOT+lastname;
-	    
-	    LoginPage login=new LoginPage(driver);
-	    login.enterUsername(login_username);
-	    login.enterPassword(login_password);
-	    HomePage home=login.clickOnLoginButton();
-	    home.clickOnEndTourButton();
-	    home.clickOnUserManagement();
-	    UsersPage users= home.clickOnUsersOption();
-	    AddUserPage add_user=users.clickOnAddUser();
-	    add_user.enterFirstName(firstname);
-	    add_user.enterLastName(lastname);
-	    add_user.enterEmail(email);
-	    add_user.selectFromDropDown();
-	    add_user.enterUserName(username_value);
-	    add_user.enterPassword(passworduser);
-	    add_user.enterConfirmPassword(passworduser);
-	    add_user.clickOnSaveButton();  
-	    users.searchUserOnSearchFieldUsingEmail(search_email);
-	    String actual_mailid=users.getSearchUser();
-	    String expected_mailid=search_email;
-	    Assert.assertEquals(actual_mailid, expected_mailid, Messages.LOGIN_FAILED);
-	    //String expected_mailid=users.searchUserOnSearchFieldUsingEmail(search_email);
-	    
-	    //String actual_usertext=users.waitForTextToBeInvisible();
-	    //String expected_usertext=Messages.USER_SUCCESS_MESSAGE;
-	    //Assert.assertEquals(actual_usertext, expected_usertext, Messages.LOGIN_FAILED);
-	    
+	public void verifyAddUser() {
+		String login_username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String login_password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+		String search_email = ExcelUtility.getStringData(1, 1, Constants.USERS_PAGE);
+
+		String firstname = RandomDataUtility.getFirstname();
+		String lastname = RandomDataUtility.getLastname();
+		String email = firstname + Constants.DOT + lastname + Constants.GMAIL;
+		String passworduser = firstname + Constants.AT + lastname;
+		String username_value = firstname + Constants.DOT + lastname;
+
+		LoginPage login = new LoginPage(driver);
+		login.enterUsername(login_username);
+		login.enterPassword(login_password);
+		HomePage home = login.clickOnLoginButton();
+		home.clickOnEndTourButton();
+		home.clickOnUserManagement();
+		UsersPage users = home.clickOnUsersOption();
+		AddUserPage add_user = users.clickOnAddUser();
+		add_user.enterFirstName(firstname);
+		add_user.enterLastName(lastname);
+		add_user.enterEmail(email);
+		add_user.selectFromDropDown();
+		add_user.enterUserName(username_value);
+		add_user.enterPassword(passworduser);
+		add_user.enterConfirmPassword(passworduser);
+		add_user.clickOnSaveButton();
+		users.searchUserOnSearchFieldUsingEmail(search_email);
+		String actual_mailid = users.getSearchUser();
+		String expected_mailid = search_email;
+		Assert.assertEquals(actual_mailid, expected_mailid, Messages.LOGIN_FAILED);
+
 	}
-	    
-	
+
 	@Test
-	public void verifyUserLoginWithNewlyAddedUser()
-	{
-		String login_username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
-	    String login_password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
-	    
-		String firstname=RandomDataUtility.getFirstname();
-	    String lastname=RandomDataUtility.getLastname();
-	    String email=firstname+Constants.DOT+lastname+Constants.GMAIL;
-	    String passworduser=firstname+Constants.AT+lastname;
-	    String username_value=firstname+Constants.DOT+lastname;
-	    
-	    LoginPage login=new LoginPage(driver);
-	    login.enterUsername(login_username);
-	    login.enterPassword(login_password);
-	    HomePage home=login.clickOnLoginButton();
-	    home.clickOnEndTourButton();
-	    home.clickOnUserManagement();
-	    UsersPage users= home.clickOnUsersOption();
-	    AddUserPage add_user=users.clickOnAddUser();
-	    add_user.enterFirstName(firstname);
-	    add_user.enterLastName(lastname);
-	    add_user.enterEmail(email);
-	    add_user.selectFromDropDown();
-	    add_user.enterUserName(username_value);
-	    add_user.enterPassword(passworduser);
-	    add_user.enterConfirmPassword(passworduser);
-	    add_user.clickOnSaveButton();  
-	    users.waitForTextToBeInvisible();
-	    home.clickOnUserLogOut();
-	    home.clickOnSignOutButton();
-	    login.enterUsername(username_value);
-	    login.enterPassword(passworduser);
-	    login.clickOnLoginButton();
-	    String actual_message=home.getLoginText();
-	    String expected_message=Constants.PROFILE_WELCOME+firstname+Constants.CHARACTER;
-	    Assert.assertEquals(actual_message, expected_message, Messages.LOGIN_FAILED);
-		
+	public void verifyUserLoginWithNewlyAddedUser() {
+		String login_username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String login_password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+
+		String firstname = RandomDataUtility.getFirstname();
+		String lastname = RandomDataUtility.getLastname();
+		String email = firstname + Constants.DOT + lastname + Constants.GMAIL;
+		String passworduser = firstname + Constants.AT + lastname;
+		String username_value = firstname + Constants.DOT + lastname;
+
+		LoginPage login = new LoginPage(driver);
+		login.enterUsername(login_username);
+		login.enterPassword(login_password);
+		HomePage home = login.clickOnLoginButton();
+		home.clickOnEndTourButton();
+		home.clickOnUserManagement();
+		UsersPage users = home.clickOnUsersOption();
+		AddUserPage add_user = users.clickOnAddUser();
+		add_user.enterFirstName(firstname);
+		add_user.enterLastName(lastname);
+		add_user.enterEmail(email);
+		add_user.selectFromDropDown();
+		add_user.enterUserName(username_value);
+		add_user.enterPassword(passworduser);
+		add_user.enterConfirmPassword(passworduser);
+		add_user.clickOnSaveButton();
+		users.waitForTextToBeInvisible();
+		home.clickOnUserLogOut();
+		home.clickOnSignOutButton();
+		login.enterUsername(username_value);
+		login.enterPassword(passworduser);
+		login.clickOnLoginButton();
+		String actual_message = home.getLoginText();
+		String expected_message = Constants.PROFILE_WELCOME + firstname + Constants.CHARACTER;
+		Assert.assertEquals(actual_message, expected_message, Messages.LOGIN_FAILED);
+
 	}
 
 }
-
-	
-

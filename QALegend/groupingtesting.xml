@@ -8,11 +8,13 @@
 			<include name="Smoke"></include>
 		</run>
 	</groups>
-  <test name="All TestCases">
-	  <parameter name="browser" value="Chrome"/>
-    <classes>
-      <class name="test_package.ResetPageTest"/>
-	  <class name="test_package.LoginPageTest"/>
-    </classes>
-  </test> <!-- Functional Test -->
-</suite> <!-- Functional Suite -->
+	<test name="All TestCases">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="test_package.ResetPageTest" />
+			<class name="test_package.LoginPageTest" />
+		</classes>
+	</test> <!--
+	Functional Test -->
+</suite> <!--
+Functional Suite -->

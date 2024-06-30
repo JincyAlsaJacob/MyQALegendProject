@@ -24,58 +24,50 @@ public class Base {
 	public WebDriver driver;
 	public Properties prop;
 	public FileInputStream fs;
-	public void initialiseBrowser(String browser)
-	{
-		prop=new Properties();
+
+	public void initialiseBrowser(String browser) {
+		prop = new Properties();
 		try {
-			fs=new FileInputStream(Constants.CONFIG_FILE);
+			fs = new FileInputStream(Constants.CONFIG_FILE);
 			prop.load(fs);
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
-		if(browser.equals("Chrome"))
-				{
-			        driver=new ChromeDriver();
-				}
-		else if(browser.equals("Edge"))
-		{
-			driver=new EdgeDriver();
-		}
-		else if(browser.equals("Firefox"))
-		{
-			driver=new FirefoxDriver();
-		}
-		else 
-		{	
+		if (browser.equals("Chrome")) {
+			driver = new ChromeDriver();
+		} else if (browser.equals("Edge")) {
+			driver = new EdgeDriver();
+		} else if (browser.equals("Firefox")) {
+			driver = new FirefoxDriver();
+		} else {
 			throw new RuntimeException("Invalid Browser");
 		}
-		 driver.get(prop.getProperty("url"));
-		 driver.manage().window().maximize();
+		driver.get(prop.getProperty("url"));
+		driver.manage().window().maximize();
 	}
-    @BeforeMethod
+
+	@BeforeMethod
 	@Parameters("browser")
-	public void setUp(String browser_name)
-	{
+	public void setUp(String browser_name) {
 		initialiseBrowser(browser_name);
-	} 
+	}
+
 	@AfterMethod
-	public void closeBrowser(ITestResult result) throws IOException
-	{
-		if(result.getStatus()==ITestResult.FAILURE)
-		{
+	public void closeBrowser(ITestResult result) throws IOException {
+		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
 		}
 		driver.close();
 	}
-	public void takeScreenshot(ITestResult result) throws IOException
-	{
-		TakesScreenshot takescreenshot=(TakesScreenshot)driver;
-		File screenshot=takescreenshot.getScreenshotAs(OutputType.FILE);
-		FileUtils.copyFile(screenshot, new File("./ScreenShot/"+result.getName()+".png"));
+
+	public void takeScreenshot(ITestResult result) throws IOException {
+		TakesScreenshot takescreenshot = (TakesScreenshot) driver;
+		File screenshot = takescreenshot.getScreenshotAs(OutputType.FILE);
+		FileUtils.copyFile(screenshot, new File("./ScreenShot/" + result.getName() + ".png"));
 	}
 
 }

@@ -12,30 +12,29 @@ import page_object.My_ProfilePage;
 import utilities.ExcelUtility;
 import utilities.RandomDataUtility;
 
-public class My_ProfilePageTest extends Base{
-	
-	@Test
-	public void verifyEditProfile()
-	{
-    	
-		String username=ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
-		String password=ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
-		String new_lastname=RandomDataUtility.getLastname();
+public class My_ProfilePageTest extends Base {
 
-		LoginPage login=new LoginPage(driver);
+	@Test
+	public void verifyEditProfile() {
+
+		String username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
+		String password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
+		String new_lastname = RandomDataUtility.getLastname();
+
+		LoginPage login = new LoginPage(driver);
 		login.enterUsername(username);
 		login.enterPassword(password);
-		HomePage home=login.clickOnLoginButton();
+		HomePage home = login.clickOnLoginButton();
 		home.clickOnEndTourButton();
 		home.clickOnUserLogOut();
-		My_ProfilePage profile=home.clickOnProfileButton();
+		My_ProfilePage profile = home.clickOnProfileButton();
 		profile.clearLastName();
 		profile.enterNewLastName(new_lastname);
 		profile.clickOnUpdateButton();
-		String actual_editname=home.getUserProfileText();
-		String expected_editname=Constants.PROFILE_NAME+new_lastname;
+		String actual_editname = home.getUserProfileText();
+		String expected_editname = Constants.PROFILE_NAME + new_lastname;
 		Assert.assertEquals(actual_editname, expected_editname, Messages.FAILED_PROFILE_UPDATION);
-		
+
 	}
 
 }

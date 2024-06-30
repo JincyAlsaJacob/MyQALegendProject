@@ -5,17 +5,19 @@
 		<listener class-name="listeners.Extend_Listeners"></listener>
 		<listener class-name="listeners.AnnotationTransformer"></listener>
 	</listeners>
-  <test name="Report Test">
-	  <parameter name="browser" value="Chrome"/>
-    <classes>
-      <class name="test_package.HomePageTest">
-      <methods>
-		  <include name="verifyHomePageTitle"/>
-		  <exclude name="verifyUserLoginDate"/>
-	  </methods>
-      </class>
-      <class name="test_package.LoginPageTest"/>
-      <class name="test_package.AddUserPageTest"/>
-    </classes>
-  </test> <!-- Functional Test -->
-</suite> <!-- Functional Suite -->
+	<test name="Report Test">
+		<parameter name="browser" value="Chrome" />
+		<classes>
+			<class name="test_package.HomePageTest">
+				<methods>
+					<include name="verifyHomePageTitle" />
+					<exclude name="verifyUserLoginDate" />
+				</methods>
+			</class>
+			<class name="test_package.LoginPageTest" />
+			<class name="test_package.AddUserPageTest" />
+		</classes>
+	</test> <!--
+	Functional Test -->
+</suite> <!--
+Functional Suite -->
