@@ -14,7 +14,7 @@
 			<class name="test_package.My_ProfilePageTest" />
 			<class name="test_package.ResetPageTest" />
 			<class name="test_package.UserManagementTest" />
-			<class name="test_package.UsersPageTest"/>
+			<class name="test_package.UsersPageTest" />
 		</classes>
 	</test> <!--
 	Functional Test -->
