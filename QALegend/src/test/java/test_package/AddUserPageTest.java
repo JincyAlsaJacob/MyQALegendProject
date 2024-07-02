@@ -18,7 +18,7 @@ import utilities.RandomDataUtility;
 
 public class AddUserPageTest extends Base {
 	@Test
-	public void verifyAddUser() {  //jhh
+	public void verifyAddUser() {  
 		String login_username = ExcelUtility.getStringData(0, 1, Constants.LOGIN_PAGE);
 		String login_password = ExcelUtility.getIntegerData(1, 1, Constants.LOGIN_PAGE);
 		String search_email = ExcelUtility.getStringData(1, 1, Constants.USERS_PAGE);

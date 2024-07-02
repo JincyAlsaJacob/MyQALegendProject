@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-06-30T19:23:04 IST" name="Functional Suite" finished-at="2024-06-30T19:23:45 IST" duration-ms="40589">
+  <suite started-at="2024-07-01T19:20:25 IST" name="Functional Suite" finished-at="2024-07-01T19:21:32 IST" duration-ms="67183">
     <groups>
     </groups>
-    <test started-at="2024-06-30T19:23:04 IST" name="Test" finished-at="2024-06-30T19:23:45 IST" duration-ms="40589">
+    <test started-at="2024-07-01T19:20:25 IST" name="Test" finished-at="2024-07-01T19:21:32 IST" duration-ms="67183">
       <class name="test_package.AddUserPageTest">
-        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-30T19:23:04 IST" name="setUp" finished-at="2024-06-30T19:23:19 IST" duration-ms="15065" status="PASS">
+        <test-method is-config="true" signature="setUp(java.lang.String)[pri:0, instance:test_package.AddUserPageTest@5c6648b0]" started-at="2024-07-01T19:20:25 IST" name="setUp" finished-at="2024-07-01T19:20:50 IST" duration-ms="24780" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -18,15 +18,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="verifyUserLoginWithNewlyAddedUser()[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-30T19:23:19 IST" name="verifyUserLoginWithNewlyAddedUser" finished-at="2024-06-30T19:23:44 IST" duration-ms="25077" status="PASS">
+        <test-method signature="verifyUserLoginWithNewlyAddedUser()[pri:0, instance:test_package.AddUserPageTest@5c6648b0]" started-at="2024-07-01T19:20:50 IST" name="verifyUserLoginWithNewlyAddedUser" finished-at="2024-07-01T19:21:32 IST" duration-ms="41547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUserLoginWithNewlyAddedUser -->
-        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test_package.AddUserPageTest@6302bbb1]" started-at="2024-06-30T19:23:44 IST" name="closeBrowser" finished-at="2024-06-30T19:23:45 IST" duration-ms="345" status="PASS">
+        <test-method is-config="true" signature="closeBrowser(org.testng.ITestResult)[pri:0, instance:test_package.AddUserPageTest@5c6648b0]" started-at="2024-07-01T19:21:32 IST" name="closeBrowser" finished-at="2024-07-01T19:21:32 IST" duration-ms="629" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyUserLoginWithNewlyAddedUser status=SUCCESS method=AddUserPageTest.verifyUserLoginWithNewlyAddedUser()[pri:0, instance:test_package.AddUserPageTest@6302bbb1] output={null}]]]>
+                <![CDATA[[TestResult name=verifyUserLoginWithNewlyAddedUser status=SUCCESS method=AddUserPageTest.verifyUserLoginWithNewlyAddedUser()[pri:0, instance:test_package.AddUserPageTest@5c6648b0] output={null}]]]>
               </value>
             </param>
           </params>

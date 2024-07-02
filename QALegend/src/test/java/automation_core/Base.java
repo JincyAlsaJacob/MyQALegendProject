@@ -19,6 +19,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 
 import constants.Constants;
+import utilities.WaitUtility;
 
 public class Base {
 	public WebDriver driver;
@@ -47,16 +48,17 @@ public class Base {
 			throw new RuntimeException("Invalid Browser");
 		}
 		driver.get(prop.getProperty("url"));
+		WaitUtility.waitUsingImplicitWait(driver);
 		driver.manage().window().maximize();
 	}
 
-	@BeforeMethod
+	@BeforeMethod(alwaysRun=true)
 	@Parameters("browser")
 	public void setUp(String browser_name) {
 		initialiseBrowser(browser_name);
 	}
 
-	@AfterMethod
+	@AfterMethod(alwaysRun=true)
 	public void closeBrowser(ITestResult result) throws IOException {
 		if (result.getStatus() == ITestResult.FAILURE) {
 			takeScreenshot(result);
