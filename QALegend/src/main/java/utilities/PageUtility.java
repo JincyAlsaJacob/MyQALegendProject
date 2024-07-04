@@ -24,45 +24,45 @@ public class PageUtility {
 		select.selectByVisibleText(text);
 	}
 
-	public static void verifySimpleAlert(WebDriver driver) {
+	public static void forSimpleAlert(WebDriver driver) {
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 	}
 
-	public static void verifyConfirmationAlert(WebDriver driver) {
+	public static void forConfirmationAlert(WebDriver driver) {
 		Alert alert = driver.switchTo().alert();
 		alert.accept();
 
 	}
 
-	public static void verifyPromptAlert(WebDriver driver, String value) {
+	public static void forPromptAlert(WebDriver driver, String value) {
 		Alert alert = driver.switchTo().alert();
 		alert.sendKeys(value);
 		alert.accept();
 
 	}
 
-	public static void verifyRightClick(WebDriver driver, WebElement element) {
+	public static void forRightClick(WebDriver driver, WebElement element) {
 		Actions action = new Actions(driver);
 		action.contextClick(element).build().perform();
 	}
 
-	public static void verifyDoubleClick(WebDriver driver, WebElement element) {
+	public static void forDoubleClick(WebDriver driver, WebElement element) {
 		Actions action = new Actions(driver);
 		action.doubleClick(element).build().perform();
 	}
 
-	public static void verifyDragAndDrop(WebDriver driver, WebElement source_element, WebElement target_element) {
+	public static void forDragAndDrop(WebDriver driver, WebElement source_element, WebElement target_element) {
 		Actions action = new Actions(driver);
 		action.dragAndDrop(source_element, target_element).build().perform();
 	}
 
-	public static void verifyDragAndOffset(WebDriver driver, WebElement source_element) {
+	public static void forDragAndOffset(WebDriver driver, WebElement source_element) {
 		Actions action = new Actions(driver);
 		action.dragAndDropBy(source_element, 50, 100).build().perform();
 	}
 
-	public static void verifyMouseHover(WebDriver driver, WebElement element) {
+	public static void forMouseHover(WebDriver driver, WebElement element) {
 		Actions action = new Actions(driver);
 		action.moveToElement(element).build().perform();
 	}
